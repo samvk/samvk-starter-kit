@@ -1,0 +1,30 @@
+// ==========================================================================
+// META-FUNCTIONS (functions and placeholders used within the helpers folder)
+// ==========================================================================//
+
+// ========================== em() AND rem() ===============================//
+@function strip-unit($num) {
+	@return $num / ($num * 0 + 1);
+}
+
+// ============================= absolute() & fixed() =================================//
+
+@mixin position($position, $args) {
+	@each $o in top right bottom left {
+		$i: index($args, $o);
+
+		@if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number  {
+			#{$o}: nth($args, $i + 1);
+		}
+	}
+
+	position: $position;
+}
+
+// ============================ pseudo() ================================//
+
+%pseudo {
+	position: absolute;
+	display: block;
+	content: "";
+}

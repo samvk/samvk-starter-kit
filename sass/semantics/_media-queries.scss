@@ -1,0 +1,43 @@
+//hidden elements
+
+.hide-xs {
+	@include media($screen-xs-max) {
+		display: none;
+	}
+}
+
+.hide-sm {
+	@include media($screen-sm-max) {
+		display: none;
+	}
+}
+
+.hide-md {
+	@include media($screen-md-max) {
+		display: none;
+	}
+}
+
+//visible elements
+
+.show-xs, .show-sm, .show-md {
+	display: none;
+}
+
+.show-xs {
+	@include media($screen-xs-max) {
+		display: block;
+	}
+}
+
+.show-sm {
+	@include media($screen-sm-max) {
+		display: block;
+	}
+}
+
+.show-md {
+	@include media($screen-md-max) {
+		display: block;
+	}
+}

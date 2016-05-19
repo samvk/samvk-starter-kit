@@ -1,0 +1,113 @@
+// ==========================================================================
+// MIXINS and PLACEHOLDERS
+// ==========================================================================//
+
+// ==========================================================================
+// INCLUDES:
+// 
+// Mixins:
+// * media{} queries
+// * hover{} state
+// * active{} state
+// * margin() shorthand
+// * padding() shorthand
+// * absolute() shorthand
+// * fixed() shorthand
+// * pseudo(pos){} element maker
+// * arrow(direction, color, size)
+// * underline(color, size)
+// 
+// Placeholders:
+// * %clearfix on parent element of floats
+// 
+// ==========================================================================//
+
+@mixin media($breakpoint, $query: 'max-width', $type: 'screen') {
+	@media #{$type} and (#{$query}: #{$breakpoint}) { @content; }
+}
+
+//includes :active until overwritten
+@mixin hover {
+	&:hover,
+	&:active,
+	&:focus { @content; }
+}
+
+@mixin active {
+	&:active,
+	&:focus { @content; }
+}
+
+//Margin shorthand allowing NULL values(all values required)
+@mixin margin($top, $right, $bottom, $left){
+	margin-top: $top;
+	margin-right: $right;
+	margin-bottom: $bottom;
+	margin-left: $left;
+}
+
+@mixin padding($top, $right, $bottom, $left){
+	padding-top: $top;
+	padding-right: $right;
+	padding-bottom: $bottom;
+	padding-left: $left;
+}
+
+//written as absolute(top 10px right 5px)
+@mixin absolute($args) {
+	@include position("absolute", $args);
+}
+
+//written as fixed(top 10px right 5px)
+@mixin fixed($args) {
+	@include position("fixed", $args);
+}
+
+@mixin pseudo($position){
+	@if $position == "before" OR $position == "after" {
+		&::#{$el} {
+			@extend %pseudo;
+			@content;
+		}
+	} @else {
+		@error '"#{el}" is not a valid pseudo-element.';
+	}
+}
+
+@mixin arrow($direction, $color, $size: 6px){
+	@extend %pseudo;
+	height: 0;
+	width: 0;
+	@if ($direction == "up"){
+		border-bottom: $size solid $color;
+		border-left: 1/2*$size solid transparent;
+		border-right: 1/2*$size solid transparent;
+	}
+	@else if ($direction == "down"){
+		border-top: $size solid $color;
+		border-left: 1/2*$size solid transparent;
+		border-right: 1/2*$size solid transparent;
+	}
+	@else if ($direction == "left"){
+		border-top: 1/2*$size solid transparent;
+		border-bottom: 1/2*$size solid transparent;
+		border-right: $size solid $color;
+	}
+	@else if ($direction == "right"){
+		border-top: 1/2*$size solid transparent;
+		border-bottom: 1/2*$size solid transparent;
+		border-left: $size solid $color;
+	}
+}
+
+@mixin underline($color: $color-primary, $size: 6px, $type: solid) {
+	border-bottom: $size $type $color;
+}
+
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}

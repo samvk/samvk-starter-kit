@@ -1,0 +1,20 @@
+html {
+	font-size: $font-size--base;
+	
+	@include media($screen-xs-max) {
+		font-size: $font-size--base * 0.8;
+	}
+}
+
+.h1 { font-size: 2em; }
+.h2 { font-size: 1.5em; }
+.h3 { font-size: 1.25em; }
+.h4 { font-size: 1.12em; }
+.h5 { font-size: .83em; }
+.h6 { font-size: .75em; }
+
+p,
+blockquote,
+li {
+	font-size: 1em;
+}

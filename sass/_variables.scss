@@ -1,0 +1,41 @@
+// ==========================================================================
+// VARIABLES
+// ==========================================================================//
+
+// ==========================================================================
+// INCLUDES:
+//
+// * Media query breakpoints
+// * $zindex map
+//
+// RELATED:
+// * Fonts (see fonts/_font-variables.scss)
+// * Colors (see _colors.scss)
+
+// Other variables - unlikely to change between projects - can be found where they're first used.
+
+// ==========================================================================//
+
+//Media queries breakpoints
+
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+//maximum breakpoints
+$screen-xs-min: 480px;
+
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
+
+//z-index
+
+$zindex: (
+	overlay: 5000,
+	dropdown: 4000,
+	nav: 3000,
+	pseduo: 2000,
+	default: 1,
+	hidden: -10000
+);
