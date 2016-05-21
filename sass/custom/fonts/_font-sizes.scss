@@ -1,7 +1,11 @@
+// ==========================================================================
+// FONT SIZES
+// ==========================================================================//
+
 html {
 	font-size: $font-size--base;
 	
-	@include media($screen-xs-max) {
+	@include media($xs) {
 		font-size: $font-size--base * 0.8;
 	}
 }

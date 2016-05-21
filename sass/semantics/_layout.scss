@@ -1,3 +1,7 @@
+// ==========================================================================
+// LAYOUT
+// ==========================================================================//
+
 //position
 
 .relative { position: relative; }
@@ -63,6 +67,6 @@
 //no gutters in grid (add to .row)
 
 .no-gutter > [class*='col-'] {
-	padding-left:0;
-	padding-right:0;
+	padding-left: 0;
+	padding-right: 0;
 }

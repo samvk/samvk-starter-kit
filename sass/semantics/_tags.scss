@@ -1,5 +1,5 @@
 // ==========================================================================
-// Base Styles
+// Tags (Extended from semantic class names)
 // ==========================================================================
 
 //default border-box
@@ -23,17 +23,3 @@ h6 { @extend .h6; }
 u {@extend .underline; }
 em { @extend .italic; }
 strong { @extend .bold; }
-
-a {
-	@extend .bold;
-	color: $color-secondary;
-	
-	@include hover {
-		@extend .underline;
-	}
-}
-
-//responsive imagesavealpha
-img {
-	max-width: 100%;
-}

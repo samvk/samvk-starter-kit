@@ -22,8 +22,8 @@
 // 
 // ==========================================================================//
 
-@mixin media($breakpoint, $query: 'max-width', $type: 'screen') {
-	@media #{$type} and (#{$query}: #{$breakpoint}) { @content; }
+@mixin media($breakpoint, $query: 'max-width') {
+	@media screen and (#{$query}: #{$breakpoint}) { @content; }
 }
 
 //includes :active until overwritten

@@ -1,19 +1,23 @@
+// ==========================================================================
+// MEDIA QUERIES (classes related to mobile size)
+// ==========================================================================//
+
 //hidden elements
 
 .hide-xs {
-	@include media($screen-xs-max) {
+	@include media($xs) {
 		display: none;
 	}
 }
 
 .hide-sm {
-	@include media($screen-sm-max) {
+	@include media($sm) {
 		display: none;
 	}
 }
 
 .hide-md {
-	@include media($screen-md-max) {
+	@include media($md) {
 		display: none;
 	}
 }
@@ -25,19 +29,19 @@
 }
 
 .show-xs {
-	@include media($screen-xs-max) {
+	@include media($xs) {
 		display: block;
 	}
 }
 
 .show-sm {
-	@include media($screen-sm-max) {
+	@include media($sm) {
 		display: block;
 	}
 }
 
 .show-md {
-	@include media($screen-md-max) {
+	@include media($md) {
 		display: block;
 	}
 }
