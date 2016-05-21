@@ -1,3 +1,18 @@
 // ==========================================================================
 // UPDATER (How some HTML tags should be defaulted)
 // ==========================================================================//
+
+
+hr {
+    border: 0;
+    background-color: black;
+    height: 1px;
+}
+
+button {
+    border: 0;
+    outline: 0;
+    background-color: $color-secondary;
+    font-size: em($font-size--base);
+    padding: em(15px) em(32px);
+}

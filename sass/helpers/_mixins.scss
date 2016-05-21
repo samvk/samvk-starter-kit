@@ -14,6 +14,7 @@
 // * absolute() shorthand
 // * fixed() shorthand
 // * pseudo(pos){} element maker
+// * hr(color, height, width) shorthand
 // * arrow(direction, color, size)
 // * underline(color, size)
 // 
@@ -72,6 +73,12 @@
 	} @else {
 		@error '"#{el}" is not a valid pseudo-element.';
 	}
+}
+
+@mixin hr($color, $height: NULL, $width: NULL) {
+    background-color: $color;
+    height: $height;
+    width: $width;
 }
 
 @mixin arrow($direction, $color, $size: 6px){

@@ -57,7 +57,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-@im0port "helpers/functions";
 .container:after, .container-fluid:after, .row:after, .clearfix:after {
   content: "";
   display: table;
@@ -1011,6 +1010,24 @@ p,
 blockquote,
 li {
   font-family: "Roboto", sans-serif;
+}
+
+button {
+  font-family: "Roboto Slab", serif;
+}
+
+hr {
+  border: 0;
+  background-color: black;
+  height: 1px;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  background-color: #ff784f;
+  font-size: 1em;
+  padding: 0.9375em 2em;
 }
 
 .underline, u {

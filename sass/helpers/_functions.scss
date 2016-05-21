@@ -24,7 +24,7 @@
 		$context: strip-units($context);
 	}
 	@if $target == 0 { @return 0 }
-	@return $target / $context + 0em;
+	@return $target / $context * 1em;
 }
 
 @function rem($target, $context: $font-size--base) {
@@ -35,5 +35,5 @@
 		$context: strip-units($context);
 	}
 	@if $target == 0 { @return 0 }
-	@return $target / $context + 0rem;
+	@return $target / $context * 1rem;
 }
